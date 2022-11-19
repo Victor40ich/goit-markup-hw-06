@@ -977,7 +977,7 @@ fill: var(--first-title-color);
     bottom: 13px;
     right: 28px;
 
-    fill: var(--white-color);
+    fill: var(--background-color);
 }
 
 .description-position {
