@@ -924,6 +924,9 @@ fill: var(--first-title-color);
 
     color: var(--background-color);
 }
+.footer-social {
+    margin-right: 93px;
+}
 
 
 .input-subscribe {
