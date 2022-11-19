@@ -408,7 +408,7 @@ input:focus+.icon-modal {
 }
 
 .policy a {
-    color: var(--accent-color);
+    color: var(--first-title-color);
     text-decoration: underline;
 }
 
