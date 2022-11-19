@@ -15,6 +15,18 @@ h3
 p {
     margin: 0;
 }
+textarea {
+    resize: none;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+}
+
+textarea::placeholder {
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+}
 
 .body {
     font-family: 'Roboto', sans-serif;
@@ -63,6 +75,7 @@ p {
     padding-left: 0;
     margin: 0;
 }
+
 /* Header styles */
 .header-list {
     display: flex;
@@ -272,14 +285,213 @@ p {
     top: 8px;
     width: 30px;
     height: 30px;
-    border: none;
-    background-color: transparent;
-    background-image: url('../img/close.svg');
+    padding: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
     cursor: pointer;
+    background-color: transparent;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+.modal-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(5px, 5px);
+
+}
+.modal-button:hover,
+.modal-button:focus {
+    animation: icon-close 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-button:hover .modal-icon,
+.modal-button:focus .modal-icon {
+    fill: var(--first-title-color);
+}
+.modal-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.1;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.modal-form {
+    padding: 40px;
+}
+
+.group {
+    margin-bottom: 30px;
+}
+
+.form-field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 100%;
     
 }
 
+.form-field:last-child {
+    margin: 0;
+}
 
+.form-field label {
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+
+    color: var(--benefits-color);
+    text-align: start;
+}
+
+
+.form-field input {
+
+    width: 100%;
+    height: 40px;
+    padding-left: 42px;
+    padding-right: 10px;
+    margin-top: 4px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-field input:hover,
+.form-field input:focus {
+    border-color: var(--first-title-color);
+}
+
+.form-field .comment {
+    padding: 12px 16px;
+    margin-top: 4px;
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.form-field .comment:hover {
+    border-color: var(--first-title-color);
+}
+
+.icon-modal {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:hover+.icon-modal,
+input:focus+.icon-modal {
+    fill: var(--first-title-color);
+}
+
+.policy {
+    display: flex;
+    align-items: center;
+
+    line-height: 1.7;
+    color: var(--benefits-color);
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-field .policy {
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+
+.policy a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.policy .checkbox {
+    width: 16px;
+    height: 16px;
+}
+
+.checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.icon-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    margin-right: 9px;
+
+    border: 2px solid var(--main-color);
+    border-radius: 2px;
+}
+
+.checkbox:checked+.icon-checkbox {
+    background-color: var(--first-title-color);
+    border-color: var(--first-title-color);
+    background-origin: border-box;
+}
+
+.checkbox:checked+.icon-chek {
+    fill: var(--background-color);
+}
+
+.icon-chek {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    fill: var(--background-color);
+}
+
+@keyframes icon-close {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.button-modal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 200px;
+    height: 50px;
+
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+
+    color: var(--background-color);
+    background-color: var(--first-title-color);
+
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
 
 .benefits-list {
     display: flex;
